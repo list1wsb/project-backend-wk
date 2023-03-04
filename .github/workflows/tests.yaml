@@ -13,7 +13,6 @@ jobs:
     - name: Install dependencies
       run: pp install -r requirements.txt
       
-
     - name: Pylint static analysis
       uses: PyCQA/pylint-action@v2
       with:
