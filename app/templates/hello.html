@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
+    <style>
+        body {
+            background-color: #f7c4c4; /* pastelowy róż */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button[type=submit]:hover {
+            background-color: #f0e8e8; /* jasny pastelowy róż */
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<h1>Hello Form</h1>
-<form method='POST'>
-    <label for="name">Enter your name:</label>
-    <input type="text" id="name" name="name">
-    <button type="submit">Submit</button>
-</form>
+    <h1>Hello Form</h1>
+    <form method="POST">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

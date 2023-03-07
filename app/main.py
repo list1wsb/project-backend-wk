@@ -1,10 +1,14 @@
 from flask import Flask, request, render_template
+from werkzeug.middleware.shared_data import SharedDataMiddleware
 
 app = Flask(__name__)
+app.add_url_rule('/static/<filename>', 'static', build_only=True)
+app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {'/static':  'static'})
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template('index.html')
+
 
 @app.route('/hello', methods=['GET', 'POST'])
 def hello():
