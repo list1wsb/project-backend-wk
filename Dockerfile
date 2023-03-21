@@ -1,14 +1,14 @@
-# Użyj oficjalnego obrazu Node.js jako obrazu bazowego
-FROM node:14
+# Użyj oficjalnego obrazu Python jako obrazu bazowego
+FROM python:3.8-slim
 
 # Ustaw katalog roboczy
 WORKDIR /usr/src/app
 
-# Kopiuj plik package.json i package-lock.json do katalogu roboczego
-COPY package*.json ./
+# Kopiuj plik requirements.txt do katalogu roboczego
+COPY requirements.txt ./
 
 # Zainstaluj zależności
-RUN npm install
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Kopiuj pozostałe pliki aplikacji do katalogu roboczego
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Uruchom aplikację
-CMD [ "node", "app.js" ]
+CMD [ "python", "app.py" ]
