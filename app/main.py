@@ -12,12 +12,10 @@ def hello_world():
 
 @app.route('/hello', methods=['GET', 'POST'])
 def hello():
-    if request. method == 'POST':
+    if request.method == 'POST':
         name = request.form['name']
         return "Hello " + name
-    return  render_template('hello.html')
+    return render_template('hello.html')
 
 if __name__ == '__main__':
-    port = 8080
-    app.run(host='0.0.0.0', port=port)
-
+    app.run(host='0.0.0.0', port=8080)
