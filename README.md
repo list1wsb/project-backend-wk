@@ -30,7 +30,9 @@ Wyświetli wiadomość "hello".
 ### Z Dockerem
 
 Upewnij się, że Docker jest zainstalowany na Twoim komputerze. Następnie otwórz terminal i przejdź do katalogu z projektem. Uruchom poniższe polecenia, aby zbudować obraz Dockera i uruchomić kontener:
+
 docker build -t my-app .
+
 docker run -p 8080:8080 --name my-app-container my-app
 
 Po uruchomieniu, aplikacja będzie działać na porcie 8080. Aby wyświetlić stronę w przeglądarce, należy wpisać adres http://localhost:8080.
